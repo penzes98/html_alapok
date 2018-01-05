@@ -1,12 +1,12 @@
 /*csslint order-alphabetical: false*/
-
 /* CSSLint */
 
 .fo-menu {
     background-color: aqua;
     height: 80px;
 }
-/*ez a fo-menu classon beluli menupont class-okat valasztja ki*/
+
+/* ez a fo-menu classon belüli menüpont class-okat választja ki */
 .fo-menu .menupont {
     height: 40px;
     /* körbe mindenhol 10px a magrin */
@@ -19,40 +19,42 @@
 
     /* az előző három sor rövidítve így néz ki:  */
     margin: 10px 0 10px 10px;  /* fölül, jobbra, alul, balra */
-/*ez a css property megváltoztatja a hmtl elem alapértelmezett működését, jelen esetben*/
-/*    egy block szintű elem (div)-ből inline elemet csinál, de a block tulajdonságait is megőrzi*/
-    /*read more: https://www.w3schools.com/css/css_inline-block.asp */
     background-color: blue;
     color: white;
+    /* ez a css property megváltoztatja a html elem alapértelmezett működését, jelen esetben */
+    /* egy block szintű elem (div)-ből inline elem-et csinál, de a block tulajdonságait is megőrzi */
+    /* azaz, reagálni fog az elem a width, és height paraméterekre */
+    /* read more: https://www.w3schools.com/css/css_inline-block.asp */
     display: inline-block;
-
 
     /* padding-top: 22px; */
     /* padding-left: 10px; */
     /* padding-right: 10px; */
     /* padding-bottom: 0; */
-    
+
     /* az előző három sor rövidítve így néz ki:  */
-    
-    /* fölül, jobbra, alul, balra */
-    padding: 22px 10px 0 10px; 
-
+    padding: 22px 10px 0 10px; /* fölül, jobbra, alul, balra */
 }
-.al-menu{
+
+.al-menu { 
     margin-top: 20px;
-    float: right;  /*jobbra rendezi az almenüt*/
-   
+    /* jobbra rendezzük az almenüt */
+    float: right;
+
 }
 
-.al-menu .menupont{
+.al-menu .menupont {
     display: inline-block;
     margin-left: 10px;
     text-decoration: underline;
 }
-/*ha a menüpont fölé visszük az egeret, akkor bekékül az adott menüpont*/
-.al-menu .menupont:hover{
+
+/* ha a menüpont fölé visszük az egeret, akkor bekékül az adott menüpont */
+/* touch-screen-en NINCS hover!! */
+.al-menu .menupont:hover {
     color: blue;
-    cursor:pointer;
+    /* átalakítja az egér mutatóját kis kézre */
+    cursor: pointer;
 }
 
 
@@ -60,21 +62,30 @@
     background-color: lightgrey;
     margin-top: 40px;
     height: 1000px;  /*ez csak azért kell hogy a scrollbar megjelenjen */
-    
     /* bizonoyos css property-ket nem ajánlott használni, mert nem minden böngésző */
     /* ismeri. Ezt a caniuse.com weboldalon ellenőrizhetjük */
     /* https://caniuse.com/#search=zoom */
     /* pl zoom nem működik firefoxban!!! */
     /* zoom: 0.1; */
-
 }
-.fixed-doboz{
-    width: 200px;
-    height:50px;
-    background-color: blue;
-    color: white;
-}
-
-
 
 /* #learnabout box-modell https://www.w3schools.com/css/css_boxmodel.asp */
+
+
+.fixed-doboz {
+    width: 100%;
+    height: 50px;
+    background-color: blue;
+    color: white;
+    /* a position fixed, kiszedi az elemet a document flow-ból, és egy fix helyre beteszi */
+    /* a többi elem számára ez az elem nem lesz látható */
+    position:fixed;
+    /* ezek csak akkor működnek ha a position: fixed be van állítva */
+    top:0;
+    right:0;
+}
+
+
+
+
+
